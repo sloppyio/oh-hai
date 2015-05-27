@@ -1,0 +1,39 @@
+{
+    "project": "oh-hai",
+    "services": [
+        {
+            "id": "frontend",
+            "apps": [
+                {
+                    "id": "apache",
+                    "domain": {
+                        "type": "HTTP",
+                        "uri": "$domain"
+                    },
+                    "mem": 128,
+                    "image": "sloppy/apache-php",
+                    "cmd": "",
+                    "instances": 1,
+                    "health_checks": [
+                        {
+                            "timeout_seconds": 10,
+                            "interval_seconds": 10,
+                            "max_consecutive_failures": 3,
+                            "path": "/",
+                            "type": "HTTP",
+                            "grace_period_seconds": 3
+                        }
+                    ],
+                    "port_mappings": [
+                        {
+                            "container_port": 80
+                        },
+                        {
+                            "container_port": 443
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
