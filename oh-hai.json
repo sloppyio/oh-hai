@@ -10,7 +10,7 @@
                         "type": "HTTP",
                         "uri": "$domain"
                     },
-                    "mem": 128,
+                    "mem": 512,
                     "image": "sloppy/apache-php",
                     "instances": 1,
                     "port_mappings": [
@@ -19,7 +19,7 @@
                         }
                     ],
                     "env": {
-                        "MESSAGE": "Sloppy rulez!"
+                        "MESSAGE": "Sloppy ruiilez!"
                     }
                 }
             ]
