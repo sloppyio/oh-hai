@@ -12,4 +12,4 @@ Start with
 
 where `mydomain.sloppy.zone` has to be a free .sloppy.zone subdomain.
 
-More info at http://docs.sloppy.io
+More info at http://sloppy.io
