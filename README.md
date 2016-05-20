@@ -8,7 +8,7 @@ Clone the repo:
 
 Start with
 
-`sloppy start oh-hai/oh-hai.json --var domain:mydomain.sloppy.zone`
+`sloppy start --var domain:mydomain.sloppy.zone oh-hai/oh-hai.json`
 
 where `mydomain.sloppy.zone` has to be a free .sloppy.zone subdomain.
 
