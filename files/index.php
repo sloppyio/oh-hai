@@ -84,11 +84,11 @@
   <p>You can scale me and change my settings at <a href="https://admin.sloppy.io">admin.sloppy.io</a></p>
   <p>You can also run this image locally:</p>
   <pre class="p2 inverted">docker run -e "MESSAGE=sloppy.io rules" -p 80:80 sloppy/apache-php</pre>
-  <p>Now go ahead and build your own or <a href="#">try our quickstarters</a></p>
+  <p>Now go ahead and build your own or <a href="https://github.com/sloppyio/quickstarters">try our quickstarters</a></p>
   <footer class="mt3 border-top h5">
     <ul class="list-reset mxn1">
-      <li class="inline-block p1"><a href="#">Support</a></li>
-      <li class="inline-block p1"><a href="#">Contact</a></li>
+      <li class="inline-block p1"><a href="https://support.sloppy.io">Support</a></li>
+      <li class="inline-block p1"><a href="https://gitter.im/sloppyio/users">Chat with us</a></li>
     </ul>
   </footer>
 </div>
