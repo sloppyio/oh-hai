@@ -73,7 +73,7 @@
         <div class="center">
           <div class="inline-block p2 rounded inverted-blue has-arrow">
             <div class="arrow blue"></div>
-            This <code>MESSAGE</code> is an env var. You can change it.
+            This <code>MESSAGE</code> is an env var. Change it at "Settings => Env Vars" and click "Deploy changes now".
           </div>
         </div>
       </div>
@@ -81,7 +81,7 @@
     }
   ?>
   <p>You can clone the git repo for this app at <a href="https://github.com/sloppyio/oh-hai">https://github.com/sloppyio/oh-hai</a>, change it and deploy it to sloppy.io.</p>
-  <p>You can scale me and change my settings at <a href="https://admin.sloppy.io">admin.sloppy.io</a></p>
+  <p>You can scale me and change my settings at <a href="https://admin.sloppy.io">https://admin.sloppy.io</a></p>
   <p>You can also run this image locally:</p>
   <pre class="p2 inverted">docker run -e "MESSAGE=sloppy.io rules" -p 80:80 sloppy/apache-php</pre>
   <p>Now go ahead and build your own or <a href="https://github.com/sloppyio/quickstarters">try our quickstarters</a></p>
