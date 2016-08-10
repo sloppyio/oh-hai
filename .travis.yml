@@ -3,9 +3,10 @@ services:
 
 before_install:
   - docker build -t sloppyio/oh-hai:travis .
+  - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+  - docker push sloppy/oh-hai:travis
 
 after_success:
-  - if [ "$TRAVIS_BRANCH" == "master" ]; then
-      docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
-      docker push sloppy/oh-hai:travis;
-    fi
+  - curl -L https://files.sloppy.io/sloppy-`uname -s`-`uname -m` > sloppy
+  - chmod +x sloppy
+  - ./sloppy show
