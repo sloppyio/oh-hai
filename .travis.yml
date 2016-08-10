@@ -6,6 +6,9 @@ before_install:
   - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
   - docker push sloppy/oh-hai:travis
 
+script:
+  - docker ps | grep -q sloppy
+
 after_success:
   - curl -L https://files.sloppy.io/sloppy-`uname -s`-`uname -m` > sloppy
   - chmod +x sloppy
