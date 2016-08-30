@@ -73,7 +73,7 @@
         <div class="center">
           <div class="inline-block p2 rounded inverted-blue has-arrow">
             <div class="arrow blue"></div>
-            This <code>MESSAGE</code> is an env var. Change it at "Settings => Env Vars" and click "Deploy changes now".
+            This <code>MESSAGE</code> is an env var. Change it at "Settings => Basic Settings => Environment Variables" and click "Deploy changes now".
           </div>
         </div>
       </div>
