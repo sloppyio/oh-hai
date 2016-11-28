@@ -7,7 +7,6 @@
                 {
                     "id": "apache",
                     "domain": {
-                        "type": "HTTP",
                         "uri": "$domain"
                     },
                     "mem": 512,
