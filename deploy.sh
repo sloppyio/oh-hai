@@ -10,7 +10,12 @@ status=$(curl -s -XGET -H "Content-Type: application/json" -H "$headers" $apiuri
 if [ "$status" != "error" ]; then
  echo "Change project $SLOPPY_PROJECT"
  ./sloppy change -var domain:$DOMAIN $SLOPPY_PROJECT $SLOPPY_FILE
+ exit 0
 else
  echo "Start project $SLOPPY_PROJECT"
  ./sloppy start -var domain:$DOMAIN $SLOPPY_FILE
+ exit 0
 fi
+
+exit 1
+
