@@ -14,3 +14,10 @@ after_success:
   - curl -L https://files.sloppy.io/sloppy-`uname -s`-`uname -m` > sloppy
   - chmod +x sloppy
   - ./sloppy start -var domain:fcmarc.sloppy.zone  oh-hai.json
+
+notifications:
+  email:
+    recipients:
+      - info@sloppy.io
+    on_success: never 
+    on_failure: always
