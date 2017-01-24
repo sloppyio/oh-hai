@@ -11,8 +11,8 @@ script:
   - docker ps | grep -q sloppy
 
 after_success:
-  - curl -L https://files.sloppy.io/sloppy-`uname -s`-`uname -m` > sloppy
-  - chmod +x sloppy
+  - apt-get install httpie jq
+  - hmod +x sloppy
   - chmod +x deploy.sh
   - ./deploy.sh
   - exit $?
