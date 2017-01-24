@@ -14,7 +14,7 @@ after_success:
   - curl -L https://files.sloppy.io/sloppy-`uname -s`-`uname -m` > sloppy
   - chmod +x sloppy
   - ./sloppy show $SLOPPY_PROJECT
-  - if [ $? -eq 1 ];then ./sloppy start -var domain:$DOMAIN $SLOPPY_JSON;else ./sloppy start -var domain:$DOMAIN $SLOPPY_PROJECT $SLOPPY_JSON;fi
+  - if [ $? -eq 1 ];then ./sloppy start -var domain:$DOMAIN $SLOPPY_JSON;else ./sloppy change -var domain:$DOMAIN $SLOPPY_PROJECT $SLOPPY_JSON;fi
   - exit $?
 
 notifications:
