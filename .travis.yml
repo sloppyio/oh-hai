@@ -1,7 +1,6 @@
 addons:
   apt:
     packages:
-    - httpie
     - jq
 
 services:
