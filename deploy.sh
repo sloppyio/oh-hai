@@ -6,8 +6,9 @@ apiuri="https://api.sloppy.io/v1"
 headers="Authorization:Bearer $SLOPPY_APITOKEN"
 
 status=$(curl -s -XGET -H "Content-Type: application/json" -H "$headers" $apiuri/apps/$SLOPPY_PROJECT | jq -r .status)
-jq --arg TRAVIS_COMMIT "$TRAVIS_COMMIT" ".services[].apps[].image=\"sloppy/frontend:$TRAVIS_COMMIT\"" $SLOPPY_FILE > deploy.json
+jq --arg TRAVIS_COMMIT "$TRAVIS_COMMIT" ".services[].apps[].image=\"sloppy/oh-hai:$TRAVIS_COMMIT\"" $SLOPPY_FILE > deploy.json
 
+echo "Deploy the following json:"
 cat deploy.json
 
 if [ "$status" != "error" ]; then
