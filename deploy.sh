@@ -7,7 +7,11 @@ set -x
 apiuri="https://api.sloppy.io/v1"
 headers="Authorization:Bearer $SLOPPY_APITOKEN"
 
+
+http --ignore-stdin GET $apiuri/apps/$SLOPPY_PROJECT "$headers" | jq -r .status
 status=$(http --ignore-stdin GET $apiuri/apps/$SLOPPY_PROJECT "$headers" | jq -r .status)
+
+echo "Status ist $status"
 
 if [ "$status" != "error" ]; then
  echo "Change project $SLOPPY_PROJECT"
