@@ -5,7 +5,7 @@
 set -x
 
 apiuri="https://api.sloppy.io/v1"
-headers="Authorization:Bearer $SLOPPY_TOKEN"
+headers="Authorization:Bearer $SLOPPY_APITOKEN"
 
 status=$(http --ignore-stdin GET $apiuri/apps/$SLOPPY_PROJECT "$headers" | jq -r .status)
 
