@@ -13,7 +13,8 @@ script:
 after_success:
   - curl -L https://files.sloppy.io/sloppy-`uname -s`-`uname -m` > sloppy
   - chmod +x sloppy
-  - ./sloppy show $SLOPPY_PROJECT;if [ $? -eq 0 ]; then sloppy change -var domain:$DOMAIN $SLOPPY_PROJECT $SLOPPY_FILE; else sloppy start -var domain:$DOMAIN $SLOPPY_FILE; fi
+  - chmod +x deploy.sh
+  - ./deploy.sh
   - exit $?
 
 notifications:
