@@ -3,7 +3,7 @@ services:
 
 before_install:
   - docker build -t sloppy/oh-hai:travis .
-  - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+  - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
   - docker push sloppy/oh-hai:travis
   - docker run -d sloppy/oh-hai:travis
 
