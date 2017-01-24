@@ -2,15 +2,10 @@
 # simple deploy script for sloppy.io platform for travis-ci
 #@author marc@sloppy.io
 
-set -x
-
 apiuri="https://api.sloppy.io/v1"
 headers="Authorization:Bearer $SLOPPY_APITOKEN"
 
-jq --help
-
 status=$(curl -s -XGET -H "Content-Type: application/json" -H "$headers" $apiuri/apps/$SLOPPY_PROJECT | jq -r .status)
-echo "Status ist $status"
 
 if [ "$status" != "error" ]; then
  echo "Change project $SLOPPY_PROJECT"
