@@ -7,10 +7,9 @@ set -x
 apiuri="https://api.sloppy.io/v1"
 headers="Authorization:Bearer $SLOPPY_APITOKEN"
 
-curl -XGET $apiuri/apps/
-http --ignore-stdin GET $apiuri/apps/$SLOPPY_PROJECT "$headers"
+http GET $apiuri/apps/$SLOPPY_PROJECT
 
-status=$(http --ignore-stdin GET $apiuri/apps/$SLOPPY_PROJECT "$headers" | jq -r .status)
+status=$(http GET $apiuri/apps/$SLOPPY_PROJECT "$headers" | jq -r .status)
 
 echo "Status ist $status"
 
