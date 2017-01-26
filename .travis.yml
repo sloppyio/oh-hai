@@ -1,16 +1,11 @@
-addons:
-  apt:
-    packages:
-    - jq
-
 services:
   - docker
 
 before_install:
-  - docker build -t sloppy/oh-hai:$TRAVIS_COMMIT .
+  - docker build -t $DOCKER_IMAGE:$TRAVIS_COMMIT .
   - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
-  - docker push sloppy/oh-hai:$TRAVIS_COMMIT
-  - docker run -d sloppy/oh-hai:$TRAVIS_COMMIT
+  - docker push $DOCKER_IMAGE:$TRAVIS_COMMIT
+  - docker run -d $DOCKER_IMAGE:$TRAVIS_COMMIT
 
 script:
   - docker ps | grep -q sloppy
@@ -18,8 +13,7 @@ script:
 after_success:
   - curl -L https://files.sloppy.io/sloppy-`uname -s`-`uname -m` > sloppy
   - chmod +x sloppy
-  - chmod +x deploy.sh
-  - ./deploy.sh
+  - sloppy change -v docker_image:"$DOCKER_IMAGE:$TRAVIS_COMMIT" -v domain:"$DOMAIN" $SLOPPY_PROJECT $SLOPPY_FILE
 
 notifications:
   email:

@@ -1,0 +1,27 @@
+{
+    "project": "oh-hai",
+    "services": [
+        {
+            "id": "frontend",
+            "apps": [
+                {
+                    "id": "apache",
+                    "domain": {
+                        "uri": "$domain"
+                    },
+                    "mem": 512,
+                    "image": "$docker_image",
+                    "instances": 1,
+                    "port_mappings": [
+                        {
+                            "container_port": 80
+                        }
+                    ],
+                    "env": {
+                        "MESSAGE": "Sloppy.io with travis-ci rulez!"
+                    }
+                }
+            ]
+        }
+    ]
+}
