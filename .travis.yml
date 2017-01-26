@@ -13,7 +13,7 @@ script:
 after_success:
   - curl -k -L https://files.sloppy.zone/sloppy-`uname -s`-`uname -m` > sloppy
   - chmod +x sloppy
-  - ./sloppy change -v docker_image:"$DOCKER_IMAGE:$TRAVIS_COMMIT" -v domain:"$DOMAIN" $SLOPPY_PROJECT $SLOPPY_FILE
+  - ./sloppy change -v docker_image:"$DOCKER_IMAGE:$TRAVIS_COMMIT" -v domain:"$DOMAIN" $SLOPPY_FILE
 
 notifications:
   email:
