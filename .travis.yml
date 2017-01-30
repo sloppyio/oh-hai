@@ -8,7 +8,7 @@ before_install:
   - docker run -d $DOCKER_IMAGE:$TRAVIS_COMMIT
 
 script:
-  - docker ps | grep -q sloppy
+  - docker ps | grep -q $DOCKER_IMAGE
 
 after_success:
   - curl -k -L https://files.sloppy.io/sloppy-`uname -s`-`uname -m` > sloppy
